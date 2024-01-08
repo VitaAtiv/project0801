@@ -28,9 +28,16 @@ function User(name) {
     if (this.tasks[index].isDone) {
       console.log("task completed");
       return;
-      }
-      this.tasks[index].isDone = true
+    }
+    this.tasks[index].isDone = true;
   };
+  this.viewTasks = function () {
+    for (const task of this.tasks) {
+      console.log(`${task.name} - ${task.isDone ? "Done":"In process"}`);
+      
+    }
+  };
+
 }
 
 const user = new User("Vita");
@@ -50,4 +57,4 @@ console.log(user);
 user.markTaskAsDone(task1);
 user.markTaskAsDone(task1);
 console.log(user);
-
+user.viewTasks()
